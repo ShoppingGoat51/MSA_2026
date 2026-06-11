@@ -6,5 +6,5 @@ This repository will contain python programs from the MSA major
 - Decision Statements
 - Iteration
 - Functions
-- File Handilng
+- File Handling
 - Object-Oriented Programming (OOP)
