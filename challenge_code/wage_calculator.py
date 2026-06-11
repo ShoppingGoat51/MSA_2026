@@ -15,7 +15,7 @@ def get_data(prompt, max):
 def main():
     # Get data from the user
     hours = get_data("number of hours worked daily", 24)
-    wage = get_data("hourly wage", float("inf")
+    wage = get_data("hourly wage", float("inf"))
     # Calculate Pay Advice
     gross_income = 350 * hours * wage
     taxes = .12 * gross_income
