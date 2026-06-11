@@ -1,25 +1,27 @@
 def get_data(prompt, max):
+    # Loop until a valid input
     while True:
         try:
             data = float(input(f"Enter the {prompt}: "))
-            if data <= 0:
-                print("ERROR: Enter a number between 0 and 24.")
-                continue
-            if max == True and data > 24:
-                print("ERROR: Enter a number between 0 and 24.")
-                continue
-            return data
+            # Validate user input
+            if 0 < data <= max:
+                return data
+            # Print error message 
+            print("ERROR: Enter a number between 0 and 24.")
         except:
+            # Print error message
             print("ERROR: Please enter a number.")
-            continue
 
 def main():
-    hours = get_data("number of hours worked daily", True)
-    wage = get_data("hourly wage", False)
-    gross_income = 260 * hours * wage
+    # Get data from the user
+    hours = get_data("number of hours worked daily", 24)
+    wage = get_data("hourly wage", 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999)
+    # Calculate Pay Advice
+    gross_income = 350 * hours * wage
     taxes = .12 * gross_income
     net_income = gross_income - taxes
 
+    # Output Pay Advice
     print("\nPay Advice\n-------------")
     print(f"Hours Worked: {hours:.2f}")
     print(f"Hourly Wage: ${wage:,.2f}")
